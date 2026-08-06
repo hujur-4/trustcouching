@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrustHub | Anti-Fraud Coaching Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Global Navigation Header -->
+    <header class="border-b border-slate-800 bg-slate-900/90 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                <div class="bg-emerald-500 text-slate-950 p-2 rounded-lg font-bold">
+                    <i class="fa-solid fa-shield-halved text-xl"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+                    TrustHub <span class="text-xs text-slate-400 font-mono font-normal">PROTOTYPE</span>
+                </span>
+            </div>
+            
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex space-x-1 bg-slate-950 p-1 rounded-xl border border-slate-800 text-xs font-medium">
+                <button onclick="switchTab('home')" id="nav-home" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-emerald-400 bg-slate-800">
+                    <i class="fa-solid fa-house mr-1.5"></i>Home
+                </button>
+                <button onclick="switchTab('discovery')" id="nav-discovery" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-magnifying-glass mr-1.5"></i>Discovery
+                </button>
+                <button onclick="switchTab('booking')" id="nav-booking" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-calendar-check mr-1.5"></i>Booking & Escrow
+                </button>
+                <button onclick="switchTab('live')" id="nav-live" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-video mr-1.5"></i>Live AI Call
+                </button>
+                <button onclick="switchTab('tracker')" id="nav-tracker" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-chart-line mr-1.5"></i>Progress Tracker
+                </button>
+                <button onclick="switchTab('dispute')" id="nav-dispute" class="tab-btn px-3.5 py-2 rounded-lg transition-all text-slate-400 hover:text-white">
+                    <i class="fa-solid fa-gavel mr-1.5"></i>Jury Dispute
+                </button>
+            </nav>
+
+            <div class="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-3 py-1.5 rounded-full flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                Anti-Fraud Protocol Active
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Dynamic Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8">
+
+        <!-- =================================================================== -->
+        <!-- HOME PAGE SCREEN -->
+        <!-- =================================================================== -->
+        <section id="screen-home" class="tab-content space-y-12">
+            
+            <!-- Hero Section & Problem Statement -->
+            <div class="text-center max-w-3xl mx-auto space-y-6 pt-6">
+                <div class="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-1.5 rounded-full text-xs font-semibold text-emerald-400">
+                    <i class="fa-solid fa-lock text-xs"></i> Built Specifically For Learners Burdened By Online Coaching Fraud
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight text-white">
+                    The First Coaching Platform Where <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">Scams Are Physically Impossible.</span>
+                </h1>
+
+                <!-- Problem Statement (3 Simple Lines) -->
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl text-slate-300 text-sm leading-relaxed text-left sm:text-center space-y-2">
+                    <p>1. Most online learners lose money to fake credentials, exaggerated success stories, and unverified self-proclaimed gurus.</p>
+                    <p>2. High-profile coaches routinely charge huge upfront fees, only to secretly hand off live calls to cheap junior assistants.</p>
+                    <p>3. TrustHub eliminates these risks through strict skill exams, milestone escrow locks, live facial AI checks, and peer juries.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-4 pt-2">
+                    <button onclick="switchTab('discovery')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition text-sm flex items-center gap-2 shadow-lg shadow-emerald-500/20">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span>Explore Verified Coaches</span>
+                    </button>
+                    <button onclick="switchTab('booking')" class="bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 font-semibold px-6 py-3.5 rounded-xl transition text-sm flex items-center gap-2">
+                        <i class="fa-solid fa-vault text-emerald-400"></i>
+                        <span>Test Escrow Flow</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Problem vs TrustHub Solution Matrix -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8">
+                <div class="space-y-4 border-b md:border-b-0 md:border-r border-slate-800 pb-6 md:pb-0 md:pr-6">
+                    <div class="flex items-center gap-2 text-red-400 font-bold text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-circle-xmark"></i> Traditional Coaching Market
+                    </div>
+                    <ul class="space-y-3 text-xs text-slate-400">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i> Self-written bio descriptions with fake student outcome testimonials.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i> Demand 100% upfront tuition payment with zero refund guarantees.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i> Bait-and-switch: Famous coach sells the course, but an assistant runs the call.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-0.5"></i> One-sided customer service that ignores learner ghosting or disputes.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 md:pl-2">
+                    <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-circle-check"></i> TrustHub Anti-Fraud Standard
+                    </div>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Public platform skill exam scores (e.g., 96/100) and degree verifications.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Sub-Goal Escrow: Funds stay locked until milestone proof is approved.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Live AI Biometric Scan verifies coach's face & voice on continuous video stream.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-emerald-400 mt-0.5"></i> Master Coach Jury panel arbitrates evidence-based dispute resolutions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Features Breakdown Section -->
+            <div class="space-y-6">
+                <div class="text-center space-y-2">
+                    <h2 class="text-2xl font-bold text-white">Five Pillars of Uncompromised Trust</h2>
+                    <p class="text-slate-400 text-xs sm:text-sm max-w-xl mx-auto">Click any feature card to navigate directly into the active UI screen for that system stage.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Feature Card 1 -->
+                    <div onclick="switchTab('discovery')" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition cursor-pointer group space-y-4">
+                        <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-white text-base group-hover:text-emerald-400 transition flex items-center justify-between">
+                                Pre-Entry System Gate
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Uneditable profiles displaying raw platform exam results, verified degrees, and audited milestone completion statistics.
+                            </p>
+                        </div>
+                        <span class="inline-block text-[10px] text-emerald-400 font-mono bg-emerald-950 px-2.5 py-1 rounded border border-emerald-800">
+                            Navigates to: Discovery Page
+                        </span>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div onclick="switchTab('booking')" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition cursor-pointer group space-y-4">
+                        <div class="w-12 h-12 bg-cyan-500/10 text-cyan-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-vault"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-white text-base group-hover:text-cyan-400 transition flex items-center justify-between">
+                                Sub-Goal Escrow Vaults
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Funds are locked into protected sub-goals ($250 each) and only released upon milestone verification or logged effort.
+                            </p>
+                        </div>
+                        <span class="inline-block text-[10px] text-cyan-400 font-mono bg-cyan-950 px-2.5 py-1 rounded border border-cyan-800">
+                            Navigates to: Booking & Escrow
+                        </span>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div onclick="switchTab('live')" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition cursor-pointer group space-y-4">
+                        <div class="w-12 h-12 bg-amber-500/10 text-amber-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-face-smile"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-white text-base group-hover:text-amber-400 transition flex items-center justify-between">
+                                Live AI Identity Check
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Facial and voice biometric scanning runs silently in the background during live calls to block subcontracting scams.
+                            </p>
+                        </div>
+                        <span class="inline-block text-[10px] text-amber-400 font-mono bg-amber-950 px-2.5 py-1 rounded border border-amber-800">
+                            Navigates to: Live Call Screen
+                        </span>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div onclick="switchTab('tracker')" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition cursor-pointer group space-y-4">
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-white text-base group-hover:text-blue-400 transition flex items-center justify-between">
+                                Transparent Progress Tracking
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Real-time session time auditing, code/submission attachment logs, and automated milestone status reporting.
+                            </p>
+                        </div>
+                        <span class="inline-block text-[10px] text-blue-400 font-mono bg-blue-950 px-2.5 py-1 rounded border border-blue-800">
+                            Navigates to: Progress Tracker
+                        </span>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div onclick="switchTab('dispute')" class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-6 rounded-2xl transition cursor-pointer group space-y-4">
+                        <div class="w-12 h-12 bg-red-500/10 text-red-400 rounded-xl flex items-center justify-center text-xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="font-bold text-white text-base group-hover:text-red-400 transition flex items-center justify-between">
+                                Master Coach Dispute Jury
+                                <i class="fa-solid fa-arrow-right text-xs opacity-0 group-hover:opacity-100 transition"></i>
+                            </h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                Neutral, top-tier domain experts audit call transcripts and submitted work to issue binding payout or refund rulings.
+                            </p>
+                        </div>
+                        <span class="inline-block text-[10px] text-red-400 font-mono bg-red-950 px-2.5 py-1 rounded border border-red-800">
+                            Navigates to: Jury Arbitration
+                        </span>
+                    </div>
+
+                    <!-- Call To Action Card -->
+                    <div onclick="switchTab('discovery')" class="bg-gradient-to-br from-emerald-950 to-slate-900 border border-emerald-500/40 p-6 rounded-2xl transition cursor-pointer flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-xs font-mono text-emerald-400 font-bold uppercase">Ready to Learn Safely?</span>
+                            <h3 class="font-bold text-white text-lg">Browse Verified Domain Experts</h3>
+                            <p class="text-xs text-slate-300">Find vetted tutors for AI, System Architecture, Academic Prep, and Career Coaching.</p>
+                        </div>
+                        <button class="bg-emerald-500 text-slate-950 font-bold py-2.5 px-4 rounded-xl text-xs flex items-center justify-center gap-2">
+                            Launch Discovery Portal <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 1: DISCOVERY (VERIFIED SEARCH & AUDITED PROFILES) -->
+        <section id="screen-discovery" class="tab-content hidden space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-wrap justify-between items-end gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold">Verified Coach Discovery</h1>
+                    <p class="text-slate-400 text-sm">Every coach listed here has passed mandatory background checks and skill exam gating.</p>
+                </div>
+                <div class="text-xs bg-slate-900 border border-slate-800 px-3 py-2 rounded-lg text-slate-400">
+                    <i class="fa-solid fa-filter text-emerald-400 mr-1"></i> Filtered by: <span class="text-white font-semibold">Min. Skill Exam 90+</span>
+                </div>
+            </div>
+
+            <!-- Search & Filters Bar -->
+            <div class="bg-slate-900 p-4 rounded-2xl border border-slate-800 flex flex-wrap gap-4 items-center justify-between">
+                <div class="flex-grow min-w-[240px] relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-500 text-sm"></i>
+                    <input type="text" placeholder="Search by verified skill (e.g. PyTorch, Machine Learning, Calculus)..." class="w-full bg-slate-950 border border-slate-800 rounded-xl pl-10 pr-4 py-2.5 text-sm text-slate-200 focus:outline-none focus:border-emerald-500">
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button class="bg-slate-800 text-white px-3 py-2 rounded-lg border border-slate-700">All Domains</button>
+                    <button class="bg-slate-950 text-slate-400 hover:text-white px-3 py-2 rounded-lg border border-slate-800">Tech & AI</button>
+                    <button class="bg-slate-950 text-slate-400 hover:text-white px-3 py-2 rounded-lg border border-slate-800">Academic</button>
+                    <button class="bg-slate-950 text-slate-400 hover:text-white px-3 py-2 rounded-lg border border-slate-800">Career</button>
+                </div>
+            </div>
+
+            <!-- Verified Coach Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Coach Card 1 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Dr. Elena Rostova" class="w-14 h-14 rounded-xl object-cover border border-emerald-500">
+                                <div>
+                                    <h3 class="font-bold text-white text-base">Dr. Elena Rostova</h3>
+                                    <p class="text-xs text-slate-400">Data Science & ML Specialist</p>
+                                    <span class="inline-block mt-1 text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono">
+                                        <i class="fa-solid fa-check-double mr-1"></i> Background Cleared
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Audit Scoreboard -->
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Platform Exam</span>
+                                <span class="font-extrabold text-emerald-400 text-lg">96<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Sub-Goal Success</span>
+                                <span class="font-extrabold text-cyan-400 text-lg">94.2%</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-1.5 text-slate-300">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Escrow Milestone Fee:</span>
+                                <span class="font-bold text-white">$250 / Sub-Goal</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Dispute Claim Rate:</span>
+                                <span class="text-emerald-400 font-mono">0.8% (1 in 24 Mos)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="switchTab('booking')" class="w-full bg-emerald-500/10 hover:bg-emerald-500 hover:text-slate-950 text-emerald-400 border border-emerald-500/30 font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center gap-2">
+                        <span>View Audit & Book Roadmap</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Coach Card 2 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Marcus Vance" class="w-14 h-14 rounded-xl object-cover border border-emerald-500">
+                                <div>
+                                    <h3 class="font-bold text-white text-base">Marcus Vance</h3>
+                                    <p class="text-xs text-slate-400">System Architecture & Backend</p>
+                                    <span class="inline-block mt-1 text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono">
+                                        <i class="fa-solid fa-check-double mr-1"></i> Background Cleared
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Audit Scoreboard -->
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Platform Exam</span>
+                                <span class="font-extrabold text-emerald-400 text-lg">94<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Sub-Goal Success</span>
+                                <span class="font-extrabold text-cyan-400 text-lg">91.8%</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-1.5 text-slate-300">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Escrow Milestone Fee:</span>
+                                <span class="font-bold text-white">$200 / Sub-Goal</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Dispute Claim Rate:</span>
+                                <span class="text-emerald-400 font-mono">1.1% (2 in 18 Mos)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="switchTab('booking')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center gap-2">
+                        <span>View Audit & Book Roadmap</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- Coach Card 3 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition flex flex-col justify-between space-y-5">
+                    <div class="space-y-4">
+                        <div class="flex items-start justify-between gap-3">
+                            <div class="flex gap-3">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=150" alt="Sarah Jenkins" class="w-14 h-14 rounded-xl object-cover border border-emerald-500">
+                                <div>
+                                    <h3 class="font-bold text-white text-base">Sarah Jenkins</h3>
+                                    <p class="text-xs text-slate-400">Academic GRE & Quantitative Prep</p>
+                                    <span class="inline-block mt-1 text-[10px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded font-mono">
+                                        <i class="fa-solid fa-check-double mr-1"></i> Background Cleared
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Audit Scoreboard -->
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 grid grid-cols-2 gap-2 text-xs">
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Platform Exam</span>
+                                <span class="font-extrabold text-emerald-400 text-lg">98<span class="text-xs text-slate-500 font-normal">/100</span></span>
+                            </div>
+                            <div>
+                                <span class="text-slate-500 text-[10px] uppercase block">Sub-Goal Success</span>
+                                <span class="font-extrabold text-cyan-400 text-lg">97.0%</span>
+                            </div>
+                        </div>
+
+                        <div class="text-xs space-y-1.5 text-slate-300">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Escrow Milestone Fee:</span>
+                                <span class="font-bold text-white">$180 / Sub-Goal</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">Dispute Claim Rate:</span>
+                                <span class="text-emerald-400 font-mono">0.0% (0 in 12 Mos)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="switchTab('booking')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold py-2.5 rounded-xl transition text-xs flex items-center justify-center gap-2">
+                        <span>View Audit & Book Roadmap</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 2: BOOKING & SUB-GOAL ESCROW LOCK -->
+        <section id="screen-booking" class="tab-content hidden space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <h1 class="text-2xl font-bold">Session Booking & Escrow Setup</h1>
+                <p class="text-slate-400 text-sm">Select session slots and lock funds into protected sub-goal milestone vaults.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Slot Booking & Sub-Goal Roadmap -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 flex items-center justify-between flex-wrap gap-4">
+                        <div class="flex items-center gap-4">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150" alt="Coach Avatar" class="w-12 h-12 rounded-xl object-cover border border-emerald-500">
+                            <div>
+                                <h3 class="font-bold text-white">Dr. Elena Rostova</h3>
+                                <p class="text-xs text-slate-400">12-Week AI Mastery Roadmap</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-xs text-slate-400 block">Total Program Escrow</span>
+                            <span class="text-lg font-bold text-emerald-400">$750.00 USD</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-slate-300">Select Initial Live Verification Slot</h3>
+                        <div class="grid grid-cols-3 sm:grid-cols-4 gap-2 text-xs">
+                            <button class="bg-emerald-500 text-slate-950 font-bold p-3 rounded-xl border border-emerald-400">Thu, Aug 13<br><span class="font-normal text-[10px]">14:00 UTC</span></button>
+                            <button class="bg-slate-950 text-slate-300 hover:border-slate-700 p-3 rounded-xl border border-slate-800">Fri, Aug 14<br><span class="text-slate-500 text-[10px]">10:00 UTC</span></button>
+                            <button class="bg-slate-950 text-slate-300 hover:border-slate-700 p-3 rounded-xl border border-slate-800">Mon, Aug 17<br><span class="text-slate-500 text-[10px]">16:00 UTC</span></button>
+                            <button class="bg-slate-950 text-slate-300 hover:border-slate-700 p-3 rounded-xl border border-slate-800">Tue, Aug 18<br><span class="text-slate-500 text-[10px]">11:00 UTC</span></button>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-slate-300">Escrow Payment Locks</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-slate-950 p-4 rounded-xl border border-emerald-500/50 flex justify-between items-center">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-5 h-5 rounded-full bg-emerald-500 text-slate-950 text-xs font-bold flex items-center justify-center">1</span>
+                                        <h4 class="font-bold text-white text-sm">Sub-Goal 1: Neural Nets Foundations</h4>
+                                    </div>
+                                    <p class="text-xs text-slate-400 mt-1 pl-7">4 Live Hours + Code Review</p>
+                                </div>
+                                <span class="font-mono text-emerald-400 font-bold">$250.00 (Lock Now)</span>
+                            </div>
+
+                            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 flex justify-between items-center opacity-60">
+                                <div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-5 h-5 rounded-full bg-slate-800 text-slate-400 text-xs font-bold flex items-center justify-center">2</span>
+                                        <h4 class="font-bold text-slate-300 text-sm">Sub-Goal 2: PyTorch Models</h4>
+                                    </div>
+                                    <p class="text-xs text-slate-500 mt-1 pl-7">Locked until Sub-Goal 1 completion</p>
+                                </div>
+                                <span class="font-mono text-slate-400">$250.00 (Pending)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-lg text-white">Escrow Summary</h3>
+                        
+                        <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3 text-xs">
+                            <div class="flex justify-between text-slate-400">
+                                <span>Sub-Goal 1 Escrow Deposit</span>
+                                <span class="text-white font-mono">$250.00</span>
+                            </div>
+                            <div class="flex justify-between text-slate-400">
+                                <span>Platform Escrow Fee</span>
+                                <span class="text-emerald-400 font-mono">$0.00</span>
+                            </div>
+                            <div class="border-t border-slate-800 pt-2 flex justify-between font-bold text-sm text-white">
+                                <span>Total Immediate Lock</span>
+                                <span class="text-emerald-400 font-mono">$250.00</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl text-xs text-emerald-300 space-y-1">
+                            <p class="font-semibold"><i class="fa-solid fa-shield mr-1"></i> Trust Guarantee</p>
+                            <p class="text-[11px] text-slate-400">Funds are held in neutral vault. Release requires your manual approval or Master Coach Jury ruling.</p>
+                        </div>
+                    </div>
+
+                    <button onclick="switchTab('live')" class="w-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3.5 px-4 rounded-xl transition flex items-center justify-center gap-2 text-sm">
+                        <i class="fa-solid fa-lock"></i>
+                        <span>Lock $250.00 & Confirm Booking</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 3: LIVE SESSION (AI BIOMETRIC IDENTITY VERIFICATION) -->
+        <section id="screen-live" class="tab-content hidden space-y-4">
+            <div class="bg-emerald-950/80 border border-emerald-500/50 p-3 rounded-xl flex items-center justify-between text-xs sm:text-sm">
+                <div class="flex items-center gap-3">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    <span class="font-mono text-emerald-300 font-semibold">
+                        <i class="fa-solid fa-face-smile mr-1"></i> Live AI Biometric HUD: Coach Identity Verified (Facial & Voice Match: 99.8%)
+                    </span>
+                </div>
+                <span class="text-emerald-400 font-mono text-xs hidden sm:inline">Anti-Subcontracting Gate Active</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                <div class="lg:col-span-3 bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden relative min-h-[420px] flex flex-col justify-between p-4">
+                    <div class="absolute inset-0 bg-slate-950 flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=1000" alt="Live Stream" class="w-full h-full object-cover opacity-60">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/40"></div>
+                    </div>
+
+                    <div class="relative z-10 flex justify-between items-center">
+                        <div class="bg-slate-950/80 backdrop-blur px-3 py-1.5 rounded-lg border border-slate-800 text-xs flex items-center gap-2">
+                            <i class="fa-solid fa-circle text-red-500 animate-pulse text-[10px]"></i>
+                            <span>Live: Sub-Goal 1 Session</span>
+                        </div>
+                        <div class="bg-slate-950/80 backdrop-blur px-3 py-1.5 rounded-lg border border-slate-800 text-xs font-mono text-emerald-400">
+                            Logged Time: 00:48:12
+                        </div>
+                    </div>
+
+                    <div class="relative z-10 flex flex-wrap justify-between items-end gap-3">
+                        <div class="bg-slate-950/80 backdrop-blur p-2.5 rounded-xl border border-slate-800 text-xs space-y-1">
+                            <div class="text-slate-400">Verified Coach: <span class="text-white font-bold">Dr. Elena Rostova</span></div>
+                            <div class="text-emerald-400 text-[11px]"><i class="fa-solid fa-user-shield"></i> Subcontracting Protection Active</div>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button onclick="switchTab('tracker')" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-xs transition flex items-center gap-2">
+                                <i class="fa-solid fa-check"></i> Complete Session & Track
+                            </button>
+                            <button onclick="switchTab('dispute')" class="bg-red-500/20 hover:bg-red-500/30 text-red-400 border border-red-500/40 px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center gap-2">
+                                <i class="fa-solid fa-triangle-exclamation"></i> Flag Issue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-4 flex flex-col justify-between space-y-4 text-xs">
+                    <div>
+                        <h3 class="font-bold text-slate-200 border-b border-slate-800 pb-2 mb-3">Live Telemetry Feed</h3>
+                        <div class="space-y-2.5 font-mono text-[11px]">
+                            <div class="text-slate-400"><span class="text-emerald-400">[14:00]</span> Call Initiated</div>
+                            <div class="text-slate-400"><span class="text-emerald-400">[14:01]</span> Facial Scan: <span class="text-emerald-400">PASSED</span></div>
+                            <div class="text-slate-400"><span class="text-emerald-400">[14:02]</span> Voice Signature: <span class="text-emerald-400">MATCHED</span></div>
+                            <div class="text-slate-400"><span class="text-emerald-400">[14:30]</span> Mid-Call Re-Scan: <span class="text-emerald-400">PASS</span></div>
+                        </div>
+                    </div>
+                    <button onclick="switchTab('tracker')" class="w-full bg-slate-800 hover:bg-slate-700 text-slate-200 py-2.5 rounded-xl border border-slate-700 transition font-sans text-xs">
+                        View Progress Tracker
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 4: PROGRESS TRACKER & ESCROW DISBURSEMENT -->
+        <section id="screen-tracker" class="tab-content hidden space-y-6">
+            <div class="border-b border-slate-800 pb-4 flex flex-wrap justify-between items-end gap-4">
+                <div>
+                    <h1 class="text-2xl font-bold">Learner Progress & Escrow Vault</h1>
+                    <p class="text-slate-400 text-sm">Monitor sub-goal completion, submit proof-of-work, and release milestone payouts.</p>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 px-4 py-2 rounded-xl text-right">
+                    <span class="text-xs text-slate-400 block">Total Escrow Funds</span>
+                    <span class="text-base font-bold font-mono text-emerald-400">$250 Locked / $250 Released</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="bg-slate-900 border border-emerald-500/40 rounded-2xl p-5 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Sub-Goal 1: Neural Nets Foundations</h3>
+                                    <p class="text-xs text-slate-400">Completed 4/4 Live Hours • Proof-of-Work Verified</p>
+                                </div>
+                            </div>
+                            <span class="bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 text-[10px] font-mono px-2.5 py-1 rounded-full">
+                                Escrow Released ($250)
+                            </span>
+                        </div>
+                        <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 text-xs text-slate-300 flex justify-between items-center">
+                            <span><i class="fa-solid fa-file-code text-cyan-400 mr-2"></i> Assignment_1_Neural_Net.py</span>
+                            <span class="text-emerald-400 font-mono text-[10px]">Verified Score: 98%</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-amber-500/50 rounded-2xl p-5 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-amber-500 text-slate-950 font-bold flex items-center justify-center text-sm">
+                                    2
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-white text-sm">Sub-Goal 2: Deep Learning & PyTorch</h3>
+                                    <p class="text-xs text-slate-400">In Progress • 2/4 Live Hours Logged</p>
+                                </div>
+                            </div>
+                            <span class="bg-amber-500/20 text-amber-400 border border-amber-500/40 text-[10px] font-mono px-2.5 py-1 rounded-full">
+                                $250.00 Locked in Escrow
+                            </span>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="flex justify-between text-xs text-slate-400">
+                                <span>Sub-Goal Completion</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="w-full bg-slate-950 h-2 rounded-full overflow-hidden border border-slate-800">
+                                <div class="bg-amber-400 h-full w-1/2"></div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap justify-between items-center gap-3 border-t border-slate-800 pt-3">
+                            <span class="text-xs text-slate-400"><i class="fa-solid fa-upload text-slate-500 mr-1"></i> Pending Code Submission</span>
+                            <div class="flex gap-2">
+                                <button onclick="switchTab('dispute')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1.5 rounded-lg text-xs">Raise Dispute</button>
+                                <button class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-3 py-1.5 rounded-lg text-xs">Submit Assignment</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-5 space-y-3 opacity-60">
+                        <div class="flex justify-between items-start">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-slate-800 text-slate-400 font-bold flex items-center justify-center text-sm">
+                                    3
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-slate-300 text-sm">Sub-Goal 3: Capstone Deployment</h3>
+                                    <p class="text-xs text-slate-500">Unfunded • Pending Stage 2 Approval</p>
+                                </div>
+                            </div>
+                            <span class="text-slate-500 text-[10px] font-mono">$250.00 Locked</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4">
+                    <h3 class="font-bold text-base text-white">Learner Audit Summary</h3>
+                    
+                    <div class="space-y-3 text-xs">
+                        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 flex justify-between">
+                            <span class="text-slate-400">Total Live Hours Audited</span>
+                            <span class="font-bold text-white font-mono">6.2 Hours</span>
+                        </div>
+                        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 flex justify-between">
+                            <span class="text-slate-400">Biometric Verification Pass Rate</span>
+                            <span class="font-bold text-emerald-400 font-mono">100%</span>
+                        </div>
+                        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800 flex justify-between">
+                            <span class="text-slate-400">Sub-Goal Milestone Status</span>
+                            <span class="font-bold text-cyan-400 font-mono">1 / 3 Complete</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STAGE 5: PEER-LED DISPUTE JURY -->
+        <section id="screen-dispute" class="tab-content hidden space-y-6">
+            <div class="border-b border-slate-800 pb-4">
+                <h1 class="text-2xl font-bold">Master Coach Peer Arbitration</h1>
+                <p class="text-slate-400 text-sm">Independent review panel resolves sub-goal conflicts using transcript logs and work submissions.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-6">
+                    <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-xl text-amber-300 text-xs flex items-center gap-3">
+                        <i class="fa-solid fa-scale-balanced text-xl"></i>
+                        <div>
+                            <span class="font-bold block text-sm">Active Case #TR-8821</span>
+                            <span>Sub-Goal 2 funds ($250.00) locked in escrow vault pending Master Coach decision.</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-slate-300">Evidence Audit Files</h3>
+                        <div class="space-y-2 text-xs">
+                            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex justify-between items-center">
+                                <span><i class="fa-solid fa-file-lines text-emerald-400 mr-2"></i> Session_Transcripts_AI_Matched.log</span>
+                                <span class="text-emerald-400 font-mono text-[10px]">Auto-Attached</span>
+                            </div>
+                            <div class="bg-slate-950 p-3 rounded-lg border border-slate-800 flex justify-between items-center">
+                                <span><i class="fa-solid fa-clock text-amber-400 mr-2"></i> Coach_Logged_Live_Time.json</span>
+                                <span class="text-amber-400 font-mono text-[10px]">2.1 Hours Logged</span>
+                            </div>
+                        </div>
+
+                        <div class="border-2 border-dashed border-slate-800 hover:border-slate-700 bg-slate-950 p-6 rounded-xl text-center cursor-pointer">
+                            <i class="fa-solid fa-cloud-arrow-up text-2xl text-slate-500 mb-2"></i>
+                            <p class="text-xs text-slate-300 font-semibold">Upload Additional Student Code / Document Proof</p>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-end pt-2 border-t border-slate-800">
+                        <button onclick="triggerJurySubmission()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-5 py-3 rounded-xl text-xs flex items-center gap-2">
+                            <i class="fa-solid fa-gavel"></i>
+                            <span>Submit Evidence to Master Coach Jury</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 space-y-4 text-xs">
+                    <h3 class="font-bold text-base text-white">Arbitration Rules</h3>
+                    <div class="space-y-3 text-slate-400">
+                        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+                            <span class="font-bold text-white block mb-1">Time vs Effort Audit</span>
+                            If the coach logged required hours BUT the student uploaded no proof-of-work, escrow releases to coach to protect their time.
+                        </div>
+                        <div class="p-3 bg-slate-950 rounded-xl border border-slate-800">
+                            <span class="font-bold text-white block mb-1">Quality Audit</span>
+                            If student submitted work but coach skipped required hours or provided inadequate review, escrow refunds to student.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal Toast -->
+    <div id="modal-toast" class="fixed bottom-6 right-6 bg-slate-900 border border-emerald-500/50 p-4 rounded-xl shadow-2xl hidden z-50 max-w-md">
+        <div class="flex items-start gap-3">
+            <i class="fa-solid fa-circle-check text-emerald-400 text-xl mt-0.5"></i>
+            <div>
+                <h4 class="font-bold text-sm text-white">Case Submitted</h4>
+                <p class="text-xs text-slate-300 mt-0.5">Dispute routed to 3 Master Coach Arbitrators. Funds remain securely locked in escrow.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client-Side Tab Router Script -->
+    <script>
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('text-emerald-400', 'bg-slate-800');
+                btn.classList.add('text-slate-400');
+            });
+
+            const activeContent = document.getElementById('screen-' + tabId);
+            if (activeContent) activeContent.classList.remove('hidden');
+
+            const activeNav = document.getElementById('nav-' + tabId);
+            if (activeNav) {
+                activeNav.classList.add('text-emerald-400', 'bg-slate-800');
+                activeNav.classList.remove('text-slate-400');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function triggerJurySubmission() {
+            const toast = document.getElementById('modal-toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
